@@ -3,8 +3,8 @@ import {createStore} from 'vuex'
 export default createStore({
     state: {
         CallNumber: "",
-        NumberFound : [],
-        CallHistory : [],
+        NumberFound: [],
+        CallHistory: [],
         Numbers: [
             {
                 name: "pierre zidane",
@@ -32,23 +32,43 @@ export default createStore({
 
 
         },
-        AddToHistoryCall(state, contact ){
-            var d = new Date();
-            var date = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate() + " " +  d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-            console.log(date + "   date de l'apelle ")
+        AddToContact(state , number){
+            console.log("index + " + number)
+           state.Numbers.push(number)
 
-
-            state.CallHistory.push(contact )
-            console.log(state.CallHistory )
-            console.log("CallHistory")
+            console.log(state.Numbers)
         },
-        GetContactName(state , number) {
-          console.log(number + " numero recherché ")
+        AddToHistoryCall(state, numberCall) {
+            var d = new Date();
+            var calldate = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds() +":" + d.getMilliseconds();
+            console.log(calldate + "   date de l'apelle ")
 
-          //console.log(state.Numbers.find(Number => Number.number ==  number))
-            if (state.Numbers.find(Number => Number.number ==  number) != undefined){
-                state.NumberFound.push( state.Numbers.find(Number => Number.number ==  number))
-                console.log( state.NumberFound[0])
+            if (state.Numbers.find(Number => Number.number == numberCall) == undefined) {
+                state.CallHistory.push({
+                    name: numberCall,
+                    date: calldate,
+                })
+
+            } else {
+                console.log("numero trouve et ajouté dans la liste " + state.NumberFound[0].name)
+
+                state.CallHistory.push({
+                    name: state.NumberFound[0].name,
+                    date: calldate,
+                })
+            }
+
+
+            console.log(state.CallHistory)
+
+        },
+        GetContactName(state, number) {
+            //console.log(number + " numero recherché ")
+
+            //console.log(state.Numbers.find(Number => Number.number ==  number))
+            if (state.Numbers.find(Number => Number.number == number) != undefined) {
+                state.NumberFound.push(state.Numbers.find(Number => Number.number == number))
+                console.log(state.NumberFound[0])
             }
 
 

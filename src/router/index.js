@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import JournalView from "@/views/JournalView";
 import contactView from "@/views/ContactView";
 import clavierView from "@/views/ClavierView";
+import addContact from "@/views/AddContact";
 const routes = [
   {
     path: '/',
@@ -23,6 +24,11 @@ const routes = [
     path: '/clavier',
     name: 'clavier',
     component: clavierView
+  },
+  {
+    path: '/addContact',
+    name: 'addContact',
+    component: addContact
   },
   {
     path: '/about',
