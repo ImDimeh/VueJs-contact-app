@@ -1,3 +1,5 @@
+<link rel="stylesheet"
+      href="../../../../../Users/BELLAM MEHDI/AppData/Local/Temp/Rar$DRa12508.17924/Rotating Borders/style.css">
 <template>
   <h1> Page du clavier </h1>
   <div class="calculatrice">
@@ -11,9 +13,7 @@
     </div>
 
 
-
     <div class="touches">
-
 
 
       <button @click="addToCallNumber(9) , GetContactName()" data-key="105" class="bouton">9</button>
@@ -25,8 +25,6 @@
       <button @click="addToCallNumber(6) , GetContactName()" data-key="102" class="bouton">6</button>
       <button @click="addToCallNumber(5) , GetContactName()" data-key="101" class="bouton">5</button>
       <button @click="addToCallNumber(4) , GetContactName()" data-key="100" class="bouton">4</button>
-
-
 
 
       <button data-key="99" @click="addToCallNumber(3) , GetContactName()" class="bouton">3</button>
@@ -90,28 +88,69 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.ecran{
+
+  width: 200px;
+  margin-left: auto;
+margin-right: auto;
+
+  text-decoration: underline;
+  text-decoration-color: var(--light-blue-2);
+}
 .touches {
-  background-color: #2c3e50;
+  position: relative;
+
+
+
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
- margin-left: auto;
+
+  margin-left: auto;
   margin-right: auto;
   align-items: center;
+
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid var(--blue-button);
+
 
 
 
   width: 400px;
+  overflow:hidden;
+  inset:4px;
+
+  border-radius: 10px;
 
   button {
     margin: 10px;
     background-color: var(--blue-button);
     height: 50px;
     width: 100px;
-
+    z-index: 10;
   }
+}
+.touches:after{
+  content: "";
+  background-color: var(--blue-button);
+  position: absolute;
+  inset: 10px;
+}
+.touches:before {
+  content: "";
+  position: absolute;
 
+  height: 200%;
+  width: 50%;
+  background-image: linear-gradient(135deg, blue , red );
+  animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 

@@ -18,6 +18,7 @@
 
 
 :root{
+  box-sizing: border-box;
   --main-bg-color: #012A4A;
   --light-blue: #A9D6E5;
   --nav-dark-blue : #2C7DA0;
