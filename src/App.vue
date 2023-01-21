@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
+
+    <router-link to="/about">présenation</router-link>|
     <router-link to="/Journal">Journal</router-link> |
     <router-link to="/contact">contact</router-link> |
     <router-link to="/clavier">clavier</router-link> |
