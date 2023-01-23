@@ -27,6 +27,9 @@
   --white-blue:#A9D6E5;
   --light-blue-2: #89C2D9 ;
   --blue-button: #2A6F97;
+  --blue : #013A63;
+  --nav-color : #436ef0;
+  --nav-background : #020129;
 
 }
 body {
@@ -37,17 +40,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: var(--color-text);
+  color: var(--nav-color);
 
 
 }
 
 nav {
-  padding: 30px;
+  margin-top: 0;
+  padding: 40px;
+  background-color: var(--nav-background);
 
   a {
     font-weight: bold;
-    color: var(--nav-dark-blue);
+    font-size: 1.5rem;
+    color: var(--nav-color);
 
     &.router-link-exact-active {
       color: var(--light-blue);

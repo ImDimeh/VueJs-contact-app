@@ -94,8 +94,7 @@ export default {
   margin-left: auto;
 margin-right: auto;
 
-  text-decoration: underline;
-  text-decoration-color: var(--light-blue-2);
+
 }
 .touches {
   position: relative;
@@ -134,9 +133,9 @@ margin-right: auto;
 }
 .touches:after{
   content: "";
-  background-color: var(--blue-button);
+  background-color: var(--nav-background);
   position: absolute;
-  inset: 10px;
+  inset: 5px;
 }
 .touches:before {
   content: "";
@@ -144,7 +143,7 @@ margin-right: auto;
 
   height: 200%;
   width: 50%;
-  background-image: linear-gradient(135deg, blue , red );
+  background-image: linear-gradient(135deg, blue , #590eea);
   animation: rotate 4s linear infinite;
 }
 @keyframes rotate {
